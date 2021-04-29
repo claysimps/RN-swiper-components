@@ -11,7 +11,6 @@ import * as React from "react";
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import TabOneScreen from "../screens/TabOneScreen";
-import TabTwoScreen from "../screens/TabTwoScreen";
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from "../types";
 import { TopTabNavigator } from "./TopTabNavigator";
 
@@ -79,7 +78,7 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TopTabNavigator"
         component={TopTabNavigator}
-        // options={{ headerTitle: "Tab Two Title" }}
+        options={{ headerTitle: "Carousel Swipe" }}
       />
     </TabTwoStack.Navigator>
   );

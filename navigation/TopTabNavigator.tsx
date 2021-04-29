@@ -1,12 +1,14 @@
 import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { TopTabsBar } from "../components/TopTabsBar";
-import { Carousel } from "../screens/Carousel";
-import { SwipeList } from "../screens/SwipeList";
+import { DefaultCarousel } from "../screens/DefaultCarousel";
+import { TinderCarousel } from "../screens/TinderCarousel";
+import { StackCarousel } from "../screens/StackCarousel";
 
 export type TopTabParamList = {
-  Carousel: undefined;
-  SwipeList: undefined;
+  Default: undefined;
+  Tinder: undefined;
+  Stack: undefined;
 };
 
 const { Navigator, Screen } = createMaterialTopTabNavigator<TopTabParamList>();
@@ -14,16 +16,21 @@ const { Navigator, Screen } = createMaterialTopTabNavigator<TopTabParamList>();
 export const TopTabNavigator = () => (
   <Navigator
     tabBar={(props) => <TopTabsBar {...props} />}
-    initialRouteName="Carousel">
+    initialRouteName="Default">
     <Screen
-      name="Carousel"
-      component={Carousel}
-      options={{ title: "Carousel" }}
+      name="Default"
+      component={DefaultCarousel}
+      options={{ title: "Default " }}
     />
     <Screen
-      name="SwipeList"
-      component={SwipeList}
-      options={{ title: "Swipe List" }}
+      name="Tinder"
+      component={TinderCarousel}
+      options={{ title: "Tinder" }}
+    />
+    <Screen
+      name="Stack"
+      component={StackCarousel}
+      options={{ title: "Stack" }}
     />
   </Navigator>
 );

@@ -9,4 +9,4 @@ const generateImage = () => ({
 const generateImages = (numberOfImages: number) =>
   Array.from({ length: numberOfImages }, () => generateImage());
 
-export const Images = generateImages(20);
+export const DATA = generateImages(20);
