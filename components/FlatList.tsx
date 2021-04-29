@@ -11,15 +11,12 @@ import { Images as DATA } from "../utils";
 
 type ItemProps = typeof DATA[0];
 
-const Item = ({ title, image, id }: ItemProps) => {
-  console.log(image);
-  return (
-    <View key={id} style={styles.item}>
-      <Image style={styles.image} source={{ uri: image }} />
-      <Text style={styles.title}>{title}</Text>
-    </View>
-  );
-};
+const Item = ({ title, image, id }: ItemProps) => (
+  <View key={id} style={styles.item}>
+    <Image style={styles.image} source={{ uri: image }} />
+    <Text style={styles.title}>{title}</Text>
+  </View>
+);
 
 export const FlatListComponent = () => {
   const renderItem = ({ item }: { item: ItemProps }) => (
