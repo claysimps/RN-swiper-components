@@ -13,6 +13,7 @@ import useColorScheme from "../hooks/useColorScheme";
 import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from "../types";
+import { TopTabNavigator } from "./TopTabNavigator";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -21,10 +22,10 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TopTabs"
+      initialRouteName="TabOne"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="TopTabs"
+        name="TabOne"
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => (
@@ -64,7 +65,7 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="TabOneScreen"
         component={TabOneScreen}
-        options={{ headerTitle: "Tab One Title" }}
+        options={{ headerTitle: "Swipe-able FlatList" }}
       />
     </TabOneStack.Navigator>
   );
@@ -76,9 +77,9 @@ function TabTwoNavigator() {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: "Tab Two Title" }}
+        name="TopTabNavigator"
+        component={TopTabNavigator}
+        // options={{ headerTitle: "Tab Two Title" }}
       />
     </TabTwoStack.Navigator>
   );
