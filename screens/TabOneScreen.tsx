@@ -1,14 +1,15 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
 
-import EditScreenInfo from "../components/EditScreenInfo";
-import { Text, View } from "../components/Themed";
-import { Intro } from "./Intro";
+import { FlatListComponent } from "../components/FlatList";
+import { View } from "../components/Themed";
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text>Hello</Text>
+      <FlatListComponent />
+      <FlatListComponent />
+      <FlatListComponent />
     </View>
   );
 }
