@@ -10,7 +10,7 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  TopTabs: undefined;
+  TabOne: undefined;
   TabTwo: undefined;
 };
 
@@ -19,5 +19,5 @@ export type TabOneParamList = {
 };
 
 export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+  TopTabNavigator: undefined;
 };
