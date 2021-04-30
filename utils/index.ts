@@ -1,1 +1,1 @@
-export { Images } from "./GenerateImages";
+export { DATA } from "./GenerateImages";
