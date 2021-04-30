@@ -4,6 +4,7 @@
  */
 
 export type RootStackParamList = {
+  Intro: undefined;
   Root: undefined;
   NotFound: undefined;
 };
