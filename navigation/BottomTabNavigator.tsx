@@ -10,8 +10,14 @@ import * as React from "react";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
+import { SwipeListViewScreen } from "../screens/SwipeListView";
 import TabOneScreen from "../screens/TabOneScreen";
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from "../types";
+import {
+  BottomTabParamList,
+  TabOneParamList,
+  TabThreeParamList,
+  TabTwoParamList,
+} from "../types";
 import { TopTabNavigator } from "./TopTabNavigator";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -35,6 +41,15 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="TabTwo"
         component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="ios-code" color={color} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="TabThree"
+        component={TabThreeNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="ios-code" color={color} />
@@ -81,5 +96,19 @@ function TabTwoNavigator() {
         options={{ headerTitle: "Carousel Swipe" }}
       />
     </TabTwoStack.Navigator>
+  );
+}
+
+const TabThreeStack = createStackNavigator<TabThreeParamList>();
+
+function TabThreeNavigator() {
+  return (
+    <TabThreeStack.Navigator>
+      <TabThreeStack.Screen
+        name="SwipeListView"
+        component={SwipeListViewScreen}
+        options={{ headerTitle: "Swipe List" }}
+      />
+    </TabThreeStack.Navigator>
   );
 }
