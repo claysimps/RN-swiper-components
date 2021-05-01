@@ -8,8 +8,6 @@ export default function TabOneScreen() {
   return (
     <View style={styles.container}>
       <FlatListComponent />
-      <FlatListComponent />
-      <FlatListComponent />
     </View>
   );
 }

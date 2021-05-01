@@ -22,25 +22,25 @@ initialList.forEach((_, i) => {
 
 type Item = typeof initialList[0];
 
-const renderItem = ({ item }: { item: Item }) => (
-  <TouchableHighlight
-    onPress={() => console.log("You touched me")}
-    style={styles.rowFront}
-    underlayColor={"#AAA"}>
-    <View style={styles.item}>
-      <Image style={styles.image} source={{ uri: item.image }} />
-      <Text style={styles.text}>
-        image: {item.key} {item.title}. swipe left or right
-      </Text>
-    </View>
-  </TouchableHighlight>
-);
-
 export const SwipeList = () => {
   const [listData, setListData] = useState(initialList);
 
+  const renderItem = ({ item }: { item: Item }) => (
+    <TouchableHighlight
+      onPress={() => console.log("You touched me")}
+      style={styles.rowFront}
+      underlayColor={"#AAA"}>
+      <View style={styles.item}>
+        <Image style={styles.image} source={{ uri: item.image }} />
+        <Text style={styles.text}>
+          image: {item.key} {item.title}. swipe left or right
+        </Text>
+      </View>
+    </TouchableHighlight>
+  );
+
   const closeRow = (rowMap: any, rowKey: string) => {
-    console.log("this is the rowMap: ", rowMap);
+    // console.log("this is the rowMap: ", rowMap);
     if (rowMap[rowKey]) {
       rowMap[rowKey].closeRow();
     }
@@ -63,7 +63,7 @@ export const SwipeList = () => {
   };
 
   const onRowDidOpen = (rowKey: string) => {
-    console.log("This row opened", rowKey);
+    // console.log("This row opened", rowKey);
   };
 
   const onSwipeValueChange = ({
